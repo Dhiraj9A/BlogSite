@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Register your account here</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="{% static 'login_style.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form style="height: 800px;" action="signup" method="post">
+        <h3>Signup Here</h3>
+        {% for msg in messages %}
+        <h4 style="color: red; text-align: center;">{{ msg }}</h4>
+        {% endfor %}
+        {% csrf_token %}
+        <label for="username">First name</label>
+        <input type="text" placeholder="First name" id="firstname" name="firstname">
+        
+        <label for="username">Last name</label>
+        <input type="text" placeholder="Last name" id="lastname" name="lastname">
+        
+        <label for="username">Username</label>
+        <input type="text" placeholder="Username" id="username" name="username">
+
+        <label for="password">Email</label>
+        <input type="email" placeholder="Email" id="password" name="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" name="password">
+
+        <input type="submit" value="Signup">
+        <div class="social">
+          <div class="go"><a href="login"><i class="fa-solid fa-right-to-bracket">&nbsp;&nbsp;&nbsp; Login</i></a></div>
+        </div>
+    </form>
+</body>
+</html>

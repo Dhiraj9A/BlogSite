@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ blog.title}}</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
+
+<body>
+  <div class="container">
+  <div class="logout_btn">
+    <button><a href="logout"><i class="fa-solid fa-arrow-right-from-bracket">Logout</i></a></button>
+  </div>
+    <div class="card" style="width: 100%">
+      <div class="card__header">
+        <img style="display: block; margin: auto; margin-top: 20px; border-radius: 10px;" src="{{ blog.image.url }}" alt="card__image" class="card__image" width="600">
+      </div>
+      <div class="card__body">
+        <a href="/" style="text-decoration: none;"><i class="fa-solid fa-backward"></i>Back to home</a>
+        <span class="tag tag-red">{{ blog.category }}</span>
+        <h4>{{ blog.title}}</h4>
+        <p>{{ blog.description }}</p>
+        <a href="" class="tag tag-blue" style="text-decoration: none;">Read More </a>
+      </div>
+      <div class="card__footer">
+        <div class="user">
+          <img src="https://i.pravatar.cc/40?img=2" alt="user__image" class="user__image">
+          <div class="user__info">
+            <h5>{{ blog.author }}</h5>
+            <small>{{ blog.published_at }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
