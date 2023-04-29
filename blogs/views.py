@@ -50,7 +50,8 @@ def signup(request):
             return redirect("signup")
 
         else: 
-            new_user = User(first_name=fname, last_name=lname, username=username, email=email, password=password)
+            # new_user = User(first_name=fname, last_name=lname, username=username, email=email, password=password)
+            new_user = User.objects.create_user(first_name=fname, last_name=lname, username=username, email=email, password=password)
             new_user.save()
             
             return redirect("login")
